@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapolin Locações | Diversão Garantida para sua Festa</title>
     
+    <link rel="icon" type="image/png" href="https://chapolinlocacoes.github.io/.com.br/assets/avatar.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -31,7 +33,6 @@
     </script>
 
     <style>
-        /* Animações */
         .animate-fadeIn { animation: fadeIn 0.5s ease-out forwards; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -66,20 +67,18 @@
 
     <header class="fixed w-full bg-white/95 backdrop-blur-md z-50 shadow-sm border-b-4 border-chapolinYellow">
         <div class="container mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2">
-                <div class="w-12 h-12 bg-chapolinOrange flex items-center justify-center rounded-xl shadow-lg">
-                    <span class="text-white font-extrabold text-2xl italic">CH</span>
-                </div>
+            <a href="#" class="flex items-center gap-3">
+                <img src="https://chapolinlocacoes.github.io/.com.br/assets/ico.jpeg" alt="Ícone Chapolin" class="w-12 h-12 rounded-lg shadow-md object-cover">
                 <div class="flex flex-col">
-                    <span class="text-xl font-black text-chapolinBlue leading-none tracking-tight">CHAPOLIN</span>
-                    <span class="text-xs font-bold text-chapolinOrange tracking-[0.2em]">EVENTOS</span>
+                    <span class="text-xl font-black text-chapolinBlue leading-none tracking-tight uppercase">Chapolin</span>
+                    <span class="text-xs font-bold text-chapolinOrange tracking-[0.2em] uppercase">Locações</span>
                 </div>
             </a>
 
             <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wide">
                 <a href="#brinquedos" class="text-gray-600 hover:text-chapolinBlue transition-colors">Brinquedos</a>
                 <a href="#mesas" class="text-gray-600 hover:text-chapolinBlue transition-colors">Mesas e Cadeiras</a>
-                <a href="#form-captacao" class="bg-chapolinOrange text-white px-5 py-2 rounded-full hover:scale-105 transition-all">Orçamento</a>
+                <a href="#form-captacao" class="bg-chapolinOrange text-white px-5 py-2 rounded-full hover:scale-105 transition-all">Solicitar Orçamento</a>
             </nav>
 
             <button class="md:hidden text-chapolinBlue" onclick="toggleMenu()">
@@ -100,22 +99,22 @@
                     </div>
                     
                     <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
-                        A diversão da sua festa <br/>
-                        <span class="text-chapolinOrange italic">está garantida!</span>
+                        Sua festa merece <br/>
+                        <span class="text-chapolinOrange italic">diversão de verdade!</span>
                     </h1>
                     
                     <p class="text-lg text-gray-600 max-w-xl font-medium leading-relaxed">
-                        Locação de brinquedos, mesas e cadeiras com quem entende de alegria. Equipamentos higienizados, seguros e pontualidade total.
+                        Aluguel de brinquedos, mesas e cadeiras com segurança e pontualidade. Equipamentos rigorosamente higienizados para o seu evento.
                     </p>
 
-                    <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-wrap gap-4 pt-4">
                         <div class="flex items-center gap-2 bg-white p-3 rounded-lg shadow-sm border border-gray-100">
                             <i data-lucide="shield-check" class="text-green-500"></i>
-                            <span class="text-sm font-bold">100% Higienizado</span>
+                            <span class="text-sm font-bold">Segurança Garantida</span>
                         </div>
                         <div class="flex items-center gap-2 bg-white p-3 rounded-lg shadow-sm border border-gray-100">
-                            <i data-lucide="truck" class="text-chapolinBlue"></i>
-                            <span class="text-sm font-bold">Entrega Pontual</span>
+                            <i data-lucide="clock" class="text-chapolinBlue"></i>
+                            <span class="text-sm font-bold">Pontualidade Total</span>
                         </div>
                     </div>
                 </div>
@@ -132,37 +131,33 @@
 
                         <div id="step-0" class="form-step active">
                             <div class="text-center mb-6">
-                                <h3 class="text-2xl font-bold text-chapolinBlue">Faça seu Orçamento</h3>
-                                <p class="text-gray-500 text-sm">Rápido, fácil e sem compromisso!</p>
+                                <h3 class="text-2xl font-bold text-chapolinBlue">Iniciar Orçamento</h3>
+                                <p class="text-gray-500 text-sm">Dados básicos para disponibilidade</p>
                             </div>
-                            
                             <div class="space-y-4">
                                 <div>
                                     <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Seu Nome</label>
                                     <input type="text" id="lead_nome" oninput="checkStep0()" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all" placeholder="Como te chamamos?">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Data do Evento</label>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Data da Festa</label>
                                     <input type="date" id="lead_data" oninput="checkStep0()" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all">
                                 </div>
                             </div>
-
-                            <button type="button" id="btn-next-0" disabled onclick="nextStep(1)" class="w-full mt-8 bg-chapolinBlue text-white hover:bg-chapolinDark shadow-lg shadow-chapolinBlue/30 px-8 py-4 rounded-xl font-bold tracking-wide transition-all disabled:opacity-50 flex items-center justify-center gap-2">
-                                Próximo Passo <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <button type="button" id="btn-next-0" disabled onclick="nextStep(1)" class="w-full mt-8 bg-chapolinBlue text-white hover:bg-chapolinDark shadow-lg px-8 py-4 rounded-xl font-bold transition-all disabled:opacity-50 flex items-center justify-center gap-2">
+                                Próximo <i data-lucide="arrow-right" class="w-5 h-5"></i>
                             </button>
                         </div>
 
                         <div id="step-1" class="form-step">
-                            <h3 class="text-xl font-bold text-chapolinBlue mb-6">Horário e Itens</h3>
-                            
+                            <h3 class="text-xl font-bold text-chapolinBlue mb-6">Detalhes do Evento</h3>
                             <div class="space-y-4">
                                 <div>
-                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Horário do Evento</label>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Horário</label>
                                     <input type="time" id="lead_horario" oninput="checkStep1()" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all">
                                 </div>
-
                                 <div>
-                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">O que você precisa?</label>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">O que deseja locar?</label>
                                     <select id="lead_tipo" onchange="toggleOutros(); checkStep1();" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all">
                                         <option value="" disabled selected>Selecione...</option>
                                         <option value="Mesas e Cadeiras">Mesas e Cadeiras</option>
@@ -171,17 +166,15 @@
                                         <option value="Outros">Outros (Descrever)</option>
                                     </select>
                                 </div>
-
                                 <div id="campo-outros" class="hidden animate-fadeIn">
-                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Descreva os itens</label>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Quais itens?</label>
                                     <textarea id="lead_outros" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all" rows="2"></textarea>
                                 </div>
                             </div>
-
                             <div class="flex gap-3 pt-6">
-                                <button type="button" onclick="nextStep(0)" class="text-gray-400 font-bold px-4 hover:text-gray-600 transition-colors">Voltar</button>
-                                <button type="button" id="btn-submit" disabled onclick="submitToWhatsapp()" class="flex-1 bg-chapolinOrange text-white shadow-lg shadow-chapolinOrange/30 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-105 transition-all">
-                                    Solicitar Orçamento
+                                <button type="button" onclick="nextStep(0)" class="text-gray-400 font-bold px-4">Voltar</button>
+                                <button type="button" id="btn-submit" disabled onclick="submitToWhatsapp()" class="flex-1 bg-chapolinOrange text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all">
+                                    Finalizar via WhatsApp
                                 </button>
                             </div>
                         </div>
@@ -190,52 +183,18 @@
                             <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <i data-lucide="check" class="h-10 w-10 text-green-600"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Quase lá!</h3>
-                            <p class="text-gray-600 mb-6">Estamos te redirecionando para o WhatsApp para finalizar os detalhes.</p>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Excelente!</h3>
+                            <p class="text-gray-600">Abrindo seu WhatsApp para concluir o orçamento...</p>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="brinquedos" class="py-20 bg-white">
+    <footer class="bg-chapolinDark text-white py-10 mt-auto">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-black text-chapolinBlue mb-12">Nossas Soluções</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="group p-8 rounded-3xl bg-gray-50 hover:bg-chapolinOrange transition-all duration-500 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-chapolinOrange group-hover:bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                        <i data-lucide="castle" class="text-white group-hover:text-chapolinOrange w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-white">Infláveis</h3>
-                    <p class="text-gray-500 group-hover:text-white/80">Castelos, tobogãs e muito mais para gastar a energia!</p>
-                </div>
-                <div class="group p-8 rounded-3xl bg-gray-50 hover:bg-chapolinBlue transition-all duration-500 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-chapolinBlue group-hover:bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                        <i data-lucide="smile" class="text-white group-hover:text-chapolinBlue w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-white">Brinquedos</h3>
-                    <p class="text-gray-500 group-hover:text-white/80">Piscina de bolinhas, cama elástica e tombo legal.</p>
-                </div>
-                <div class="group p-8 rounded-3xl bg-gray-50 hover:bg-chapolinYellow transition-all duration-500 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-chapolinYellow group-hover:bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                        <i data-lucide="armchair" class="text-white group-hover:text-chapolinYellow w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-white">Mobiliário</h3>
-                    <p class="text-gray-500 group-hover:text-white/80">Mesas e cadeiras de alta qualidade para seus convidados.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-chapolinDark text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <p class="font-bold mb-4">Chapolin Locações - +55 11 97140-4189</p>
-            <div class="flex justify-center gap-6 opacity-60">
-                <i data-lucide="instagram" class="w-6 h-6"></i>
-                <i data-lucide="facebook" class="w-6 h-6"></i>
-            </div>
+            <p class="font-bold opacity-80 uppercase tracking-widest text-sm">© 2026 Chapolin Locações - Sua festa em boas mãos</p>
         </div>
     </footer>
 
@@ -244,12 +203,12 @@
             <div class="bg-chapolinOrange p-4 flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <div class="relative">
-                        <div class="w-12 h-12 rounded-full border-2 border-white bg-white flex items-center justify-center text-chapolinOrange font-black text-xl">CH</div>
+                        <img src="https://chapolinlocacoes.github.io/.com.br/assets/avatar.png" alt="Avatar Chapolin" class="w-12 h-12 rounded-full border-2 border-white bg-white object-cover">
                         <div class="absolute bottom-0 right-0 w-3 h-3 bg-[#25D366] border-2 border-chapolinOrange rounded-full online-indicator"></div>
                     </div>
                     <div>
                         <p class="text-white font-bold text-sm">Chapolin Locações</p>
-                        <p class="text-white/80 text-xs italic">Online agora</p>
+                        <p class="text-white/80 text-xs italic">Online para te ajudar</p>
                     </div>
                 </div>
                 <button onclick="fecharWidget()" class="text-white hover:bg-white/20 p-1 rounded-full"><i data-lucide="x" class="w-5 h-5"></i></button>
@@ -258,14 +217,13 @@
             <div class="p-5 bg-chapolinYellow/5">
                 <div class="bg-white p-3 rounded-xl rounded-tl-none shadow-sm border border-gray-100 text-sm text-gray-700 mb-4 relative">
                     <span class="font-bold text-chapolinOrange italic">"Não contavam com minha astúcia!"</span><br><br>
-                    Olá! Preencha abaixo para falar direto com nossa equipe de festas:
+                    Olá! Qual a data da sua festa para eu verificar os brinquedos disponíveis?
                 </div>
-                
                 <form id="whats-widget-form" class="space-y-3" onsubmit="enviarWhatsWidget(event)">
                     <input type="text" id="ww_nome" required placeholder="Seu Nome" class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
-                    <input type="text" id="ww_data" required onfocus="(this.type='date')" placeholder="Data da Festa" class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
-                    <button type="submit" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-green-500/20">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i> Iniciar Chat
+                    <input type="text" id="ww_data" required onfocus="(this.type='date')" placeholder="Data do Evento" class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
+                    <button type="submit" class="w-full bg-[#25D366] text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:bg-[#20bd5a] transition-all">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Consultar Agora
                     </button>
                 </form>
             </div>
@@ -279,9 +237,7 @@
     <script>
         lucide.createIcons();
 
-        // --- Lógica do Wizard ---
-        let currentStep = 0;
-
+        // Lógica do Wizard
         function checkStep0() {
             const nome = document.getElementById('lead_nome').value;
             const data = document.getElementById('lead_data').value;
@@ -303,14 +259,12 @@
         function nextStep(step) {
             document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
             document.getElementById(`step-${step}`).classList.add('active');
-            
             if(step < 3) {
                 for(let i=0; i<3; i++) {
                     const bar = document.getElementById(`bar-${i}`);
                     bar.className = `h-1.5 w-10 rounded-full transition-all ${i <= step ? 'bg-chapolinOrange' : 'bg-gray-200'}`;
                 }
             }
-            currentStep = step;
         }
 
         function submitToWhatsapp() {
@@ -319,18 +273,15 @@
             const hora = document.getElementById('lead_horario').value;
             const tipo = document.getElementById('lead_tipo').value;
             const outros = document.getElementById('lead_outros').value;
-            
             const itemFinal = tipo === "Outros" ? outros : tipo;
 
             const mensagem = `Oi Chapolin! meu nome é ${nome}. Quero locar ${itemFinal} para o dia ${data} às ${hora}. Está disponível?`;
-            const url = `https://wa.me/5511971404189?text=${encodeURIComponent(mensagem)}`;
-            
+            window.open(`https://wa.me/5511971404189?text=${encodeURIComponent(mensagem)}`, '_blank');
             nextStep(3);
-            setTimeout(() => { window.open(url, '_blank'); }, 1000);
         }
 
-        // --- Lógica do Widget WhatsApp ---
-        setTimeout(() => { abrirWidget(); }, 15000); // Abre após 15s
+        // Widget de Chat
+        setTimeout(() => { abrirWidget(); }, 12000);
 
         function abrirWidget() {
             document.getElementById('whatsapp-widget').classList.remove('widget-hidden');
@@ -345,14 +296,9 @@
         function enviarWhatsWidget(e) {
             e.preventDefault();
             const nome = document.getElementById('ww_nome').value;
-            const data = document.getElementById('ww_data').value;
-            const mensagem = `Oi Chapolin! Não contavam com minha astúcia.. Me chamo ${nome} e quero ver a disponibilidade para o dia ${data}.`;
+            const data = document.getElementById('ww_data').value.split('-').reverse().join('/');
+            const mensagem = `Oi Chapolin! Não contavam com minha astúcia.. Me chamo ${nome} e quero verificar brinquedos para o dia ${data}.`;
             window.open(`https://wa.me/5511971404189?text=${encodeURIComponent(mensagem)}`, '_blank');
-        }
-
-        function toggleMenu() {
-            // Lógica simples para menu mobile se necessário
-            alert("Menu lateral em construção! Use os botões da página.");
         }
     </script>
 </body>
