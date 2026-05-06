@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+        <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2161982581312623');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
+/></noscript>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapolin Locações | Diversão Garantida para sua Festa</title>
+    
+    <link rel="icon" type="image/png" href="https://chapolinlocacoes.github.io/.com.br/assets/avatar.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        chapolinOrange: '#FF6600',
+                        chapolinYellow: '#FFCC00',
+                        chapolinBlue: '#0099FF',
+                        chapolinDark: '#0055AA',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .animate-fadeIn { animation: fadeIn 0.5s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: fadeIn 0.4s ease-out forwards; }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .online-indicator { animation: pulse-ring 2s infinite; }
+        .widget-hidden {
+            opacity: 0 !important;
+            transform: translateY(20px) scale(0.95) !important;
+            pointer-events: none !important;
+            transition: all 0.3s ease-in-out !important;
+        }
+        .bg-pattern {
+            background-color: #ffffff;
+            background-image:  radial-gradient(#0099FF 0.5px, transparent 0.5px), radial-gradient(#0099FF 0.5px, #ffffff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0,10px 10px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 bg-[#FAFAFA] min-h-screen flex flex-col relative font-sans">
+
+    <header class="fixed w-full bg-white/95 backdrop-blur-md z-50 shadow-sm border-b-4 border-chapolinYellow">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <img src="https://chapolinlocacoes.github.io/.com.br/assets/ico.jpeg" alt="Ícone Chapolin" class="w-12 h-12 rounded-lg shadow-md object-cover">
+                <div class="flex flex-col">
+                    <span class="text-xl font-black text-chapolinBlue leading-none tracking-tight uppercase">Chapolin</span>
+                    <span class="text-xs font-bold text-chapolinOrange tracking-[0.2em] uppercase">Locações</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wide">
+                <a href="#brinquedos" class="text-gray-600 hover:text-chapolinBlue transition-colors">Brinquedos</a>
+                <a href="#mesas" class="text-gray-600 hover:text-chapolinBlue transition-colors">Mesas e Cadeiras</a>
+                <a href="#form-captacao" class="bg-chapolinOrange text-white px-5 py-2 rounded-full hover:scale-105 transition-all">Solicitar Orçamento</a>
+            </nav>
+
+            <button class="md:hidden text-chapolinBlue" onclick="toggleMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="relative pt-36 pb-20 overflow-hidden flex-grow">
+        <div class="absolute inset-0 bg-pattern z-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-chapolinBlue/10 px-4 py-2 rounded-full border border-chapolinBlue/20">
+                        <i data-lucide="party-popper" class="w-4 h-4 text-chapolinBlue"></i>
+                        <span class="text-xs font-bold text-chapolinBlue uppercase tracking-wider">Não contavam com minha astúcia!</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+                        Sua festa merece <br/>
+                        <span class="text-chapolinOrange italic">diversão de verdade!</span>
+                    </h1>
+                    
+                    <p class="text-lg text-gray-600 max-w-xl font-medium leading-relaxed">
+                        Aluguel de brinquedos, mesas e cadeiras com segurança e pontualidade. Equipamentos rigorosamente higienizados para o seu evento.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <div class="flex items-center gap-2 bg-white p-3 rounded-lg shadow-sm border border-gray-100">
+                            <i data-lucide="shield-check" class="text-green-500"></i>
+                            <span class="text-sm font-bold">Segurança Garantida</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white p-3 rounded-lg shadow-sm border border-gray-100">
+                            <i data-lucide="clock" class="text-chapolinBlue"></i>
+                            <span class="text-sm font-bold">Pontualidade Total</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5" id="form-captacao">
+                    <div class="bg-white rounded-3xl shadow-2xl border-2 border-chapolinBlue/10 p-8 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-2 bg-chapolinYellow"></div>
+                        
+                        <div class="flex gap-1 mb-6 justify-center" id="progress-bar">
+                            <div class="h-1.5 w-10 rounded-full transition-all bg-chapolinOrange" id="bar-0"></div>
+                            <div class="h-1.5 w-10 rounded-full transition-all bg-gray-200" id="bar-1"></div>
+                            <div class="h-1.5 w-10 rounded-full transition-all bg-gray-200" id="bar-2"></div>
+                        </div>
+
+                        <div id="step-0" class="form-step active">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold text-chapolinBlue">Iniciar Orçamento</h3>
+                                <p class="text-gray-500 text-sm">Dados básicos para disponibilidade</p>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Seu Nome</label>
+                                    <input type="text" id="lead_nome" oninput="checkStep0()" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all" placeholder="Como te chamamos?">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Data da Festa</label>
+                                    <input type="date" id="lead_data" oninput="checkStep0()" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all">
+                                </div>
+                            </div>
+                            <button type="button" id="btn-next-0" disabled onclick="nextStep(1)" class="w-full mt-8 bg-chapolinBlue text-white hover:bg-chapolinDark shadow-lg px-8 py-4 rounded-xl font-bold transition-all disabled:opacity-50 flex items-center justify-center gap-2">
+                                Próximo <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+
+                        <div id="step-1" class="form-step">
+                            <h3 class="text-xl font-bold text-chapolinBlue mb-6">Detalhes do Evento</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Horário</label>
+                                    <input type="time" id="lead_horario" oninput="checkStep1()" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">O que deseja locar?</label>
+                                    <select id="lead_tipo" onchange="toggleOutros('lead_tipo', 'campo-outros'); checkStep1();" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all">
+                                        <option value="" disabled selected>Selecione...</option>
+                                        <option value="Mesas e Cadeiras">Mesas e Cadeiras</option>
+                                        <option value="Brinquedos">Brinquedos</option>
+                                        <option value="Infláveis">Infláveis</option>
+                                        <option value="Outros">Outros (Descrever)</option>
+                                    </select>
+                                </div>
+                                <div id="campo-outros" class="hidden animate-fadeIn">
+                                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">Quais itens?</label>
+                                    <textarea id="lead_outros" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all" rows="2"></textarea>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 pt-6">
+                                <button type="button" onclick="nextStep(0)" class="text-gray-400 font-bold px-4">Voltar</button>
+                                <button type="button" id="btn-submit" disabled onclick="submitToWhatsapp()" class="flex-1 bg-chapolinOrange text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all">
+                                    Finalizar via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="step-3" class="form-step text-center py-6">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i data-lucide="check" class="h-10 w-10 text-green-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Excelente!</h3>
+                            <p class="text-gray-600">Abrindo seu WhatsApp para concluir o orçamento...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-chapolinDark text-white py-10 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold opacity-80 uppercase tracking-widest text-sm">© 2026 Chapolin Locações - Sua festa em boas mãos</p>
+        </div>
+    </footer>
+
+    <div id="whatsapp-widget" class="fixed bottom-6 right-6 z-[100] flex flex-col items-end widget-hidden">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border-2 border-chapolinBlue w-[340px]">
+            <div class="bg-chapolinOrange p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <img src="https://chapolinlocacoes.github.io/.com.br/assets/avatar.png" alt="Avatar Chapolin" class="w-12 h-12 rounded-full border-2 border-white bg-white object-cover">
+                        <div class="absolute bottom-0 right-0 w-3 h-3 bg-[#25D366] border-2 border-chapolinOrange rounded-full online-indicator"></div>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold text-sm">Chapolin Locações</p>
+                        <p class="text-white/80 text-xs italic">Online para te ajudar</p>
+                    </div>
+                </div>
+                <button onclick="fecharWidget()" class="text-white hover:bg-white/20 p-1 rounded-full"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            
+            <div class="p-5 bg-chapolinYellow/5 max-h-[70vh] overflow-y-auto">
+                <div class="bg-white p-3 rounded-xl rounded-tl-none shadow-sm border border-gray-100 text-sm text-gray-700 mb-4 relative">
+                    <span class="font-bold text-chapolinOrange italic">"Não contavam com minha astúcia!"</span><br><br>
+                    Olá! Preencha os detalhes e receba seu orçamento agora:
+                </div>
+                <form id="whats-widget-form" class="space-y-3" onsubmit="enviarWhatsWidget(event)">
+                    <input type="text" id="ww_nome" required placeholder="Seu Nome" class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
+                    
+                    <div class="grid grid-cols-2 gap-2">
+                        <input type="text" id="ww_data" required onfocus="(this.type='date')" placeholder="Data" class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
+                        <input type="time" id="ww_horario" required class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
+                    </div>
+
+                    <select id="ww_tipo" required onchange="toggleOutros('ww_tipo', 'ww-campo-outros')" class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
+                        <option value="" disabled selected>O que deseja locar?</option>
+                        <option value="Mesas e Cadeiras">Mesas e Cadeiras</option>
+                        <option value="Brinquedos">Brinquedos</option>
+                        <option value="Infláveis">Infláveis</option>
+                        <option value="Outros">Outros (Descrever)</option>
+                    </select>
+
+                    <div id="ww-campo-outros" class="hidden animate-fadeIn">
+                        <textarea id="ww_outros" placeholder="Descreva os itens..." class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all" rows="2"></textarea>
+                    </div>
+
+                    <button type="submit" id="ww-btn-submit" class="w-full bg-[#25D366] text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:bg-[#20bd5a] transition-all">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Consultar Disponibilidade
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <button id="whatsapp-backup-btn" onclick="abrirWidget()" class="fixed bottom-6 right-6 z-[90] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-8 h-8 fill-current"></i>
+    </button>
+
+    <script>
+        lucide.createIcons();
+
+        function checkStep0() {
+            const nome = document.getElementById('lead_nome').value;
+            const data = document.getElementById('lead_data').value;
+            document.getElementById('btn-next-0').disabled = !(nome.length > 2 && data !== "");
+        }
+
+        function checkStep1() {
+            const hora = document.getElementById('lead_horario').value;
+            const tipo = document.getElementById('lead_tipo').value;
+            document.getElementById('btn-submit').disabled = !(hora !== "" && tipo !== "");
+        }
+
+        function toggleOutros(selectId, campoId) {
+            const select = document.getElementById(selectId);
+            const campo = document.getElementById(campoId);
+            campo.classList.toggle('hidden', select.value !== 'Outros');
+        }
+
+        function nextStep(step) {
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step-${step}`).classList.add('active');
+            if(step < 3) {
+                for(let i=0; i<3; i++) {
+                    const bar = document.getElementById(`bar-${i}`);
+                    bar.className = `h-1.5 w-10 rounded-full transition-all ${i <= step ? 'bg-chapolinOrange' : 'bg-gray-200'}`;
+                }
+            }
+        }
+
+        function submitToWhatsapp() {
+            const btn = document.getElementById('btn-submit');
+            btn.innerHTML = "Processando..."; 
+            
+            // Disparo de Conversão Meta Pixel
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
+            
+            const nome = document.getElementById('lead_nome').value;
+            const data = document.getElementById('lead_data').value.split('-').reverse().join('/');
+            const hora = document.getElementById('lead_horario').value;
+            const tipo = document.getElementById('lead_tipo').value;
+            const outros = document.getElementById('lead_outros').value;
+            const itemFinal = tipo === "Outros" ? outros : tipo;
+
+            const mensagem = `Oi Chapolin! meu nome é ${nome}. Quero locar ${itemFinal} para o dia ${data} às ${hora}. Está disponível?`;
+            window.open(`https://wa.me/5511971404189?text=${encodeURIComponent(mensagem)}`, '_blank');
+            nextStep(3);
+        }
+
+        function enviarWhatsWidget(e) {
+            e.preventDefault();
+            const btn = document.getElementById('ww-btn-submit');
+            btn.innerHTML = "Abrindo..."; 
+
+            // Disparo de Conversão Meta Pixel
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
+
+            const nome = document.getElementById('ww_nome').value;
+            const data = document.getElementById('ww_data').value.split('-').reverse().join('/');
+            const hora = document.getElementById('ww_horario').value;
+            const tipo = document.getElementById('ww_tipo').value;
+            const outros = document.getElementById('ww_outros').value;
+            const itemFinal = tipo === "Outros" ? outros : tipo;
+
+            const mensagem = `Oi Chapolin! Não contavam com minha astúcia.. Me chamo ${nome}. Gostaria de orçar ${itemFinal} para o dia ${data} às ${hora}.`;
+            window.open(`https://wa.me/5511971404189?text=${encodeURIComponent(mensagem)}`, '_blank');
+            
+            setTimeout(() => {
+                fecharWidget();
+                btn.innerHTML = `<i data-lucide="message-circle" class="w-4 h-4"></i> Consultar Disponibilidade`;
+                lucide.createIcons();
+            }, 2000);
+        }
+
+        setTimeout(() => { abrirWidget(); }, 45000); 
+
+        function abrirWidget() {
+            document.getElementById('whatsapp-widget').classList.remove('widget-hidden');
+            document.getElementById('whatsapp-backup-btn').classList.add('hidden');
+        }
+
+        function fecharWidget() {
+            document.getElementById('whatsapp-widget').classList.add('widget-hidden');
+            document.getElementById('whatsapp-backup-btn').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
