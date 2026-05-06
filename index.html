@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-    <!-- Meta Pixel Code -->
+        <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -18,6 +18,8 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapolin Locações | Diversão Garantida para sua Festa</title>
@@ -175,7 +177,7 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-gray-400 uppercase mb-1 ml-1">O que deseja locar?</label>
-                                    <select id="lead_tipo" onchange="toggleOutros(); checkStep1();" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all">
+                                    <select id="lead_tipo" onchange="toggleOutros('lead_tipo', 'campo-outros'); checkStep1();" class="w-full bg-gray-50 border-2 border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-chapolinOrange transition-all">
                                         <option value="" disabled selected>Selecione...</option>
                                         <option value="Mesas e Cadeiras">Mesas e Cadeiras</option>
                                         <option value="Brinquedos">Brinquedos</option>
@@ -216,7 +218,7 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
     </footer>
 
     <div id="whatsapp-widget" class="fixed bottom-6 right-6 z-[100] flex flex-col items-end widget-hidden">
-        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border-2 border-chapolinBlue w-[320px]">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border-2 border-chapolinBlue w-[340px]">
             <div class="bg-chapolinOrange p-4 flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <div class="relative">
@@ -231,16 +233,33 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
                 <button onclick="fecharWidget()" class="text-white hover:bg-white/20 p-1 rounded-full"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
             
-            <div class="p-5 bg-chapolinYellow/5">
+            <div class="p-5 bg-chapolinYellow/5 max-h-[70vh] overflow-y-auto">
                 <div class="bg-white p-3 rounded-xl rounded-tl-none shadow-sm border border-gray-100 text-sm text-gray-700 mb-4 relative">
                     <span class="font-bold text-chapolinOrange italic">"Não contavam com minha astúcia!"</span><br><br>
-                    Olá! Qual a data da sua festa para eu verificar os brinquedos disponíveis?
+                    Olá! Preencha os detalhes e receba seu orçamento agora:
                 </div>
                 <form id="whats-widget-form" class="space-y-3" onsubmit="enviarWhatsWidget(event)">
                     <input type="text" id="ww_nome" required placeholder="Seu Nome" class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
-                    <input type="text" id="ww_data" required onfocus="(this.type='date')" placeholder="Data do Evento" class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
-                    <button type="submit" class="w-full bg-[#25D366] text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:bg-[#20bd5a] transition-all">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i> Consultar Agora
+                    
+                    <div class="grid grid-cols-2 gap-2">
+                        <input type="text" id="ww_data" required onfocus="(this.type='date')" placeholder="Data" class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
+                        <input type="time" id="ww_horario" required class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
+                    </div>
+
+                    <select id="ww_tipo" required onchange="toggleOutros('ww_tipo', 'ww-campo-outros')" class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all">
+                        <option value="" disabled selected>O que deseja locar?</option>
+                        <option value="Mesas e Cadeiras">Mesas e Cadeiras</option>
+                        <option value="Brinquedos">Brinquedos</option>
+                        <option value="Infláveis">Infláveis</option>
+                        <option value="Outros">Outros (Descrever)</option>
+                    </select>
+
+                    <div id="ww-campo-outros" class="hidden animate-fadeIn">
+                        <textarea id="ww_outros" placeholder="Descreva os itens..." class="w-full text-sm border-2 border-gray-100 rounded-lg px-3 py-2.5 outline-none focus:border-chapolinOrange transition-all" rows="2"></textarea>
+                    </div>
+
+                    <button type="submit" id="ww-btn-submit" class="w-full bg-[#25D366] text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:bg-[#20bd5a] transition-all">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Consultar Disponibilidade
                     </button>
                 </form>
             </div>
@@ -254,7 +273,7 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
     <script>
         lucide.createIcons();
 
-        // Lógica do Wizard
+        // Lógica de UI Otimista (Optimistic UI) e Navegação
         function checkStep0() {
             const nome = document.getElementById('lead_nome').value;
             const data = document.getElementById('lead_data').value;
@@ -267,9 +286,9 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
             document.getElementById('btn-submit').disabled = !(hora !== "" && tipo !== "");
         }
 
-        function toggleOutros() {
-            const select = document.getElementById('lead_tipo');
-            const campo = document.getElementById('campo-outros');
+        function toggleOutros(selectId, campoId) {
+            const select = document.getElementById(selectId);
+            const campo = document.getElementById(campoId);
             campo.classList.toggle('hidden', select.value !== 'Outros');
         }
 
@@ -284,7 +303,11 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
             }
         }
 
+        // Funções de Envio via WhatsApp
         function submitToWhatsapp() {
+            const btn = document.getElementById('btn-submit');
+            btn.innerHTML = "Processando..."; // Feedback Otimista
+            
             const nome = document.getElementById('lead_nome').value;
             const data = document.getElementById('lead_data').value.split('-').reverse().join('/');
             const hora = document.getElementById('lead_horario').value;
@@ -297,8 +320,30 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
             nextStep(3);
         }
 
-        // Widget de Chat
-        setTimeout(() => { abrirWidget(); }, 12000);
+        function enviarWhatsWidget(e) {
+            e.preventDefault();
+            const btn = document.getElementById('ww-btn-submit');
+            btn.innerHTML = "Abrindo..."; // Feedback Otimista
+
+            const nome = document.getElementById('ww_nome').value;
+            const data = document.getElementById('ww_data').value.split('-').reverse().join('/');
+            const hora = document.getElementById('ww_horario').value;
+            const tipo = document.getElementById('ww_tipo').value;
+            const outros = document.getElementById('ww_outros').value;
+            const itemFinal = tipo === "Outros" ? outros : tipo;
+
+            const mensagem = `Oi Chapolin! Não contavam com minha astúcia.. Me chamo ${nome}. Gostaria de orçar ${itemFinal} para o dia ${data} às ${hora}.`;
+            window.open(`https://wa.me/5511971404189?text=${encodeURIComponent(mensagem)}`, '_blank');
+            
+            setTimeout(() => {
+                fecharWidget();
+                btn.innerHTML = `<i data-lucide="message-circle" class="w-4 h-4"></i> Consultar Disponibilidade`;
+                lucide.createIcons();
+            }, 2000);
+        }
+
+        // Timer e Widget de Chat
+        setTimeout(() => { abrirWidget(); }, 45000); // Ajustado para 45 segundos
 
         function abrirWidget() {
             document.getElementById('whatsapp-widget').classList.remove('widget-hidden');
@@ -308,14 +353,6 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
         function fecharWidget() {
             document.getElementById('whatsapp-widget').classList.add('widget-hidden');
             document.getElementById('whatsapp-backup-btn').classList.remove('hidden');
-        }
-
-        function enviarWhatsWidget(e) {
-            e.preventDefault();
-            const nome = document.getElementById('ww_nome').value;
-            const data = document.getElementById('ww_data').value.split('-').reverse().join('/');
-            const mensagem = `Oi Chapolin! Não contavam com minha astúcia.. Me chamo ${nome} e quero verificar brinquedos para o dia ${data}.`;
-            window.open(`https://wa.me/5511971404189?text=${encodeURIComponent(mensagem)}`, '_blank');
         }
     </script>
 </body>
