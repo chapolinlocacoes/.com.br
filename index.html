@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-        <!-- Meta Pixel Code -->
-<script>
+        <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -17,10 +16,7 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
-
-    
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapolin Locações | Diversão Garantida para sua Festa</title>
     
@@ -273,7 +269,6 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
     <script>
         lucide.createIcons();
 
-        // Lógica de UI Otimista (Optimistic UI) e Navegação
         function checkStep0() {
             const nome = document.getElementById('lead_nome').value;
             const data = document.getElementById('lead_data').value;
@@ -303,10 +298,14 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
             }
         }
 
-        // Funções de Envio via WhatsApp
         function submitToWhatsapp() {
             const btn = document.getElementById('btn-submit');
-            btn.innerHTML = "Processando..."; // Feedback Otimista
+            btn.innerHTML = "Processando..."; 
+            
+            // Disparo de Conversão Meta Pixel
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
             
             const nome = document.getElementById('lead_nome').value;
             const data = document.getElementById('lead_data').value.split('-').reverse().join('/');
@@ -323,7 +322,12 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
         function enviarWhatsWidget(e) {
             e.preventDefault();
             const btn = document.getElementById('ww-btn-submit');
-            btn.innerHTML = "Abrindo..."; // Feedback Otimista
+            btn.innerHTML = "Abrindo..."; 
+
+            // Disparo de Conversão Meta Pixel
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
 
             const nome = document.getElementById('ww_nome').value;
             const data = document.getElementById('ww_data').value.split('-').reverse().join('/');
@@ -342,8 +346,7 @@ src="https://www.facebook.com/tr?id=2161982581312623&ev=PageView&noscript=1"
             }, 2000);
         }
 
-        // Timer e Widget de Chat
-        setTimeout(() => { abrirWidget(); }, 45000); // Ajustado para 45 segundos
+        setTimeout(() => { abrirWidget(); }, 45000); 
 
         function abrirWidget() {
             document.getElementById('whatsapp-widget').classList.remove('widget-hidden');
